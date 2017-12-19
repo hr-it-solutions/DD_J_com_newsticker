@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field name="id"
+               type="text"
+               default="0"
+               label="JGLOBAL_FIELD_ID_LABEL"
+               readonly="true"
+               class="readonly"
+               description="JGLOBAL_FIELD_ID_DESC"
+        />
+
+        <field name="title"
+               type="text"
+               size="40"
+               class="required"
+               label="JGLOBAL_TITLE"
+               description="JFIELD_TITLE_DESC"
+               required="true"
+        />
+
+        <field name="state" type="list" label="JSTATUS"
+               description="JFIELD_PUBLISHED_DESC"
+               class="inputbox small" size="1" default="1"
+        >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">JUNPUBLISHED</option>
+            <option value="-2">JTRASHED</option>
+        </field>
+
+        <field name="catid"
+               type="category"
+               extension="com_dd_newsticker"
+               class="inputbox"
+               default=""
+               label="Category"
+               description="Category"
+        >
+            <option value="0">JOPTION_SELECT_CATEGORY</option>
+        </field>
+
+        <field name="source" type="list" label="Source"
+               description="Source"
+               class="inputbox small" size="1" default="1"
+        >
+            <option value="0">-- Select Source --</option>
+            <option value="spiegelonline">Spiegel Online</option>
+            <option value="heise">Heise</option>
+            <option value="sueddeutsche">Sueddeutsche</option>
+            <option value="taz">taz</option>
+            <option value="netzpolitik">Netzpolitik</option>
+            <option value="lobbycontrol">Lobby Control</option>
+            <option value="intercept">The Intercept</option>
+            <option value="aljazeera">Al Jazeera</option>
+        </field>
+
+        <field
+                name="eventdate"
+                type="calendar"
+                label="Eventdate"
+                description="Eventdate"
+                translateformat="true"
+                showtime="true"
+                size="22"
+                filter="user_utc"
+        />
+
+        <field
+                name="created_by"
+                type="user"
+                label="Created by"
+                description="Created by"
+        />
+
+        <field name="positiv"
+               type="radio"
+               default="1"
+               label="Positiv"
+               description="Positiv"
+               class="btn-group btn-group-yesno">
+            <option value="0">JYES</option>
+            <option value="1">JNO</option>
+        </field>
+
+        <field name="topic"
+               type="text"
+               default="0"
+               label="Topic"
+               description="Topic"
+        />
+
+    </fieldset>
+
+</form>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="component" version="3.8.0" method="upgrade">
+    <name>com_dd_newsticker</name>
+    <version>1.0.0.0</version>
+    <creationDate>11.12.2017</creationDate>
+    <author>HR IT-Solutions Florian Häusler</author>
+    <authorEmail>info@hr-it-solutions.com</authorEmail>
+    <authorUrl>https://www.hr-it-solutions.com</authorUrl>
+    <copyright>Copyright (C) 2017 - 2017 Didldu e.K. | HR IT-Solutions</copyright>
+    <license>GNU/GPLv2 only</license>
+    <description>COM_DD_NEWSTICKER_XML_DESCRIPTION</description>
+
+    <!-- Runs on install -->
+    <scriptfile>script.php</scriptfile>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+
+    <!-- Runs on uninstall-->
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <!-- Runs on update -->
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>
+
+    <administration>
+        <menu view="default">COM_DD_NEWSTICKER</menu>
+        <submenu>
+            <menu link="option=com_dd_newsticker&amp;view=articles" view="articles" img="class:generic"
+                  alt="DD_Newsticker/Articles">COM_DD_NEWSTICKER_MENU_SUBMENU_NEWS</menu>
+        </submenu>
+
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>ylp_newsticker.php</filename>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/en-GB.com_dd_newsticker.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.com_dd_newsticker.sys.ini</language>
+        </languages>
+    </administration>
+
+    <media destination="com_dd_newsticker" folder="media">
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>
+
+</extension>
